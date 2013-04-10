@@ -18,6 +18,15 @@ class ofxCenteredTrueTypeFont : public ofTrueTypeFont{
 		else
 			drawStringAsShapes(s, x + offset.x, y + offset.y);		
 	}
+    
+	void drawStringTopLeft(string s, float x, float y, bool asVector = false){
+		ofVec2f offset = getOffset(s);
+        ofLog() << offset.y;
+		if (!asVector)
+			drawString(s, x, y + offset.y * 2);
+		else
+			drawStringAsShapes(s, x, y + offset.y * 2);
+	}
 	
 	void drawCenteredBoundingBox(string s, float x, float y, float padding = 0){
 		ofRectangle r = getStringBoundingBox(s, 0, 0);
