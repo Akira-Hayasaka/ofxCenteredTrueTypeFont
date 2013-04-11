@@ -21,7 +21,6 @@ class ofxCenteredTrueTypeFont : public ofTrueTypeFont{
     
 	void drawStringTopLeft(string s, float x, float y, bool asVector = false){
 		ofVec2f offset = getOffset(s);
-        ofLog() << offset.y;
 		if (!asVector)
 			drawString(s, x, y + offset.y * 2);
 		else
